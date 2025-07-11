@@ -1,0 +1,16 @@
+{
+    "tasks": [
+        {
+            "text": "Привет",
+            "finisd": false
+        },
+        {
+            "text": "купаться",
+            "finisd": true
+        },
+        {
+            "text": "Помыться",
+            "finisd": true
+        }
+    ]
+}
