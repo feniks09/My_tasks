@@ -15,13 +15,13 @@ def datatime_handler(obj):
     raise TypeError("несериализируемый объект")
 #print(datatime_handler(data))
 
-
 def update_time():
     current_time = strftime("%H:%M:%S")
     time_libel.config(text=current_time)
     time_libel.after(1000, update_time)
 #print(current_time)
- 
+
+
 def save_task():
     tasks = {"tasks" : []}
     for i in range(task_listBox.size()):
@@ -141,7 +141,6 @@ frame.pack(fill="both", expand=True, padx=10, pady=10)
 
 print(task_listBox.get(0, tk.END))
 load_task()
-
 update_time()
 
 # for index in selection:
