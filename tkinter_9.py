@@ -65,8 +65,14 @@ def add_task_listBox():
     task = entry.get()
     if task:
         task = f"{BOX_EMPTY} {task}"
-        task_listBox.insert(tk.END, task)
+        task_listBox.size
+        task_listBox.insert(0, task)
         entry.delete(0, tk.END)
+
+def edit_task():
+    selection = list(task_listBox.curselection())
+    add_task_listBox()
+
     
 def del_task_listBox():
     selection = list(task_listBox.curselection())

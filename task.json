@@ -1,55 +1,47 @@
 {
     "tasks": [
         {
-            "text": "☐ qwd",
+            "text": "☐ 111111111111111111111111111111111111111111111111111111111111111111111111",
             "completicion": false
         },
         {
-            "text": "☐ 23ed23de23",
+            "text": "☐ wq",
             "completicion": false
         },
         {
-            "text": "☐ 23e23",
+            "text": "☐ wd",
             "completicion": false
         },
         {
-            "text": "☐ d",
+            "text": "☐ wqdwq",
             "completicion": false
         },
         {
-            "text": "☐ 1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111",
+            "text": "☐ wedw",
             "completicion": false
         },
         {
-            "text": "☑ 23e32e",
+            "text": "☐ e3wqedw",
+            "completicion": false
+        },
+        {
+            "text": "☑ we",
             "completicion": true
         },
         {
-            "text": "☑ qwdwq",
+            "text": "☑ кифир",
             "completicion": true
         },
         {
-            "text": "☑ dwer",
+            "text": "☑ входные",
             "completicion": true
         },
         {
-            "text": "☑ 23e",
+            "text": "☑ давайте пить кефир",
             "completicion": true
         },
         {
-            "text": "☑ 23e",
-            "completicion": true
-        },
-        {
-            "text": "☑ wq",
-            "completicion": true
-        },
-        {
-            "text": "☑ dd23de2",
-            "completicion": true
-        },
-        {
-            "text": "☑ qwdwq",
+            "text": "☑ выходные",
             "completicion": true
         }
     ]
