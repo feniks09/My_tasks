@@ -6,7 +6,7 @@ from time import strftime
 
 CHECKMARKET = "\u2611"
 BOX_EMPTY = "\u2610"
-BG_COLOR = "#f0f0f0"
+BG_COLOR = "#C145E0"
 
 data = {"время": datetime.now}
 def datatime_handler(obj):
@@ -60,7 +60,6 @@ def load_task(sort_by_completion=True):
                 
         except FileNotFoundError:
             pass
-
         
 def add_task_listBox():
     task = entry.get()
@@ -78,7 +77,6 @@ def del_task_listBox():
         task_listBox.delete(i)
         text1 = task_listBox.get(i)
         print(f"{text1} : {i}")
-
 
 def mark_and_no_mark_task_listBox():
     selection = task_listBox.curselection()
@@ -107,7 +105,6 @@ root.title("Мои задачи")
 root.geometry("400x400+100+100")
 root.configure(background = "Hotpink")
 
-
 time_libel = tk.Label(root, width=8, bg="white", fg="black")
 time_libel.pack(padx=20, pady=20)
 
@@ -133,29 +130,31 @@ del_task_button.pack(pady=5)
 mark_NO_mark_task_button = tk.Button(root, text="Пометить или снять пометку", width=30, background="yellow", command=mark_and_no_mark_task_listBox)
 mark_NO_mark_task_button.pack(pady=5)
 
-btn_refrech = tk.Button(root, text="Сортировка", width=20, command=refresh_listBox)
+btn_refrech = tk.Button(root, text="Обновить порядок", width=20, command=refresh_listBox)
 btn_refrech.pack(pady=5)
-scrollbar_x = tk.Scrollbar(root, orient="horizontal")
-scrollbar_y = tk.Scrollbar(root, orient="vertical")
-task_listBox = tk.Listbox(root, 
+
+frame = tk.Frame(root, bg=BG_COLOR)
+frame.pack(fill="both", expand=True)
+
+scrollbar_y = tk.Scrollbar(frame, orient="vertical")
+scrollbar_x = tk.Scrollbar(frame, orient="horizontal")
+scrollbar_y.pack(side="right", fill="y")
+scrollbar_x.pack(side="bottom", fill="x")
+
+task_listBox = tk.Listbox(frame,
                           selectmode="multiple", 
-                          height=10, 
-                          width=50, 
                           xscrollcommand=scrollbar_x.set, 
-                          yscrollcommand=scrollbar_y.set)
-
-scrollbar_y.config(command=task_listBox.yview)
+                          yscrollcommand=scrollbar_y.set,
+                          height=10,
+                          width=30)
+task_listBox.pack(side="left", fill="both", expand=True)
 scrollbar_x.config(command=task_listBox.xview)
+scrollbar_y.config(command=task_listBox.yview)
 
-scrollbar_y.pack(side='right', fill="y")
-scrollbar_x.pack(side='bottom', fill="x")
-task_listBox.pack(side='left', fill='both', expand=True)
+
 
 
 root.protocol("WM_DELETE_WINDOW", lambda : [save_task(), root.destroy()])
-# frame = tk.Frame(root, bg=BG_COLOR)
-# frame.pack(fill="both", expand=True, padx=10, pady=10)
-
 print(task_listBox.get(0, tk.END))
 load_task()
 update_time()

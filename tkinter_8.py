@@ -137,16 +137,20 @@ task_listBox.pack(pady=5)
 root.protocol("WM_DELETE_WINDOW", lambda : [save_task(), root.destroy()])
 frame = tk.Frame(root, bg=BG_COLOR)
 frame.pack(fill="both", expand=True, padx=10, pady=10)
+scrollbar = tk.Scrollbar(frame)
+scrollbar.pack(side='right', fill="y")
+canvas = tk.Canvas(
+    frame,
+    yscrollcommand=scrollbar.set,
 
+    highlightthickness=0
+)
+canvas.pack(side="left", fill="both", expand=True)
 print(task_listBox.get(0, tk.END))
 load_task()
-
 update_time()
 
 # for index in selection:
 #     print(task_listBox.get(index))
 root.mainloop()
 print(5)
-print(6)
-print("рулит")
-print("dct jr")
